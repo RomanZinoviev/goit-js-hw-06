@@ -8,5 +8,11 @@ const handlerCheckLength = (event) => {
     else{event.currentTarget.classList.toggle("invalid")}
      console.log(event.currentTarget)
 };
+const handlerReloadWhenFocus = (event) => {
+    event.currentTarget.classList.remove("valid");
+    event.currentTarget.classList.remove("invalid")
+}
 
-validationInputEl.addEventListener("blur", handlerCheckLength)
+validationInputEl.addEventListener("blur", handlerCheckLength);
+validationInputEl.addEventListener("focus", handlerReloadWhenFocus);
+
