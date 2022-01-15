@@ -1,5 +1,6 @@
 const validationInputEl = document.querySelector("#validation-input");
-const dataLength = 6;
+const dataLength = Number(validationInputEl.dataset.length);
+
 const handlerCheckLength = (event) => {
     const inputLength = event.currentTarget.value.length;
     if (inputLength === dataLength) {

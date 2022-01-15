@@ -6,19 +6,17 @@ const inputEl = document.querySelector("#controls>input");
 const buttonCreate = document.querySelector("#controls button[data-create]");
 const buttonDestroy = document.querySelector("#controls button[data-destroy]");
 const boxesEl = document.querySelector("#boxes");
-let boxWidth = 20;
-let boxHeight = 20;
-// console.log(inputEl)
+let boxWidthAndHeight = 20;
+
 
 const createBoxes = (amount) => { 
   const boxArray = [];
   for (let i = 0; i < amount; i++) {
-    boxWidth += 10;
-    boxHeight += 10;
+    boxWidthAndHeight += 10;
     let box
     box = document.createElement("div");    
-    box.style.width = boxWidth + "px";
-    box.style.height = boxHeight + "px";
+    box.style.width = boxWidthAndHeight + "px";
+    box.style.height = boxWidthAndHeight + "px";
     box.style.backgroundColor = getRandomHexColor();
         boxArray.push(box);    
   }
@@ -37,7 +35,7 @@ const createBoxes = (amount) => {
   // return arrayWithDives;
   return boxArray
 };
-const handlerCreateBoxes = (event) => { 
+const handlerCreateBoxes = () => { 
   boxesEl.append(...createBoxes(inputEl.value));
   
 };
